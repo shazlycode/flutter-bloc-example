@@ -19,9 +19,9 @@ class NewsCubit extends Cubit<NewsState> {
         final data = jsonDecode(response.body)['articles'];
         print(data);
         for (int i = 0; i < data.length; i++) {
-          // fetched.add(data.map((e) => e).toList());
+          fetched.add(data[i]);
         }
-        fetched.addAll(["1", "$data", "Ahmed", "${response.statusCode}"]);
+        // fetched.addAll(["1", "$data", "Ahmed", "${response.statusCode}"]);
         news = fetched;
         emit(NewsFechingSuccess());
       } else {
